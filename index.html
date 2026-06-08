@@ -25,41 +25,38 @@ body{
 }
 
 .container{
-    text-align:center;
-    max-width:900px;
     width:100%;
+    max-width:900px;
+    min-height:85vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
 }
 
 h1{
     font-size:5rem;
     letter-spacing:12px;
-    margin-bottom:15px;
     text-shadow:0 0 25px rgba(255,255,255,0.15);
 }
 
 .alias{
     color:#6e7681;
-    font-size:1.3rem;
+    font-size:1.1rem;
     letter-spacing:4px;
-    margin-top:-8px;
-    margin-bottom:20px;
-}
-
-.quote{
-    font-size:1.3rem;
-    color:#8b949e;
-    margin-top:40px;
-    font-style:italic;
+    margin-top:5px;
+    margin-bottom:35px;
+    text-transform:uppercase;
 }
 
 .bio{
     color:#6e7681;
-    margin-bottom:30px;
+    margin-bottom:35px;
     font-size:1rem;
 }
 
 .section-title{
-    margin:30px 0 15px;
+    margin:25px 0 15px;
     color:#8b949e;
     text-transform:uppercase;
     letter-spacing:3px;
@@ -89,8 +86,18 @@ h1{
     transform:translateY(-3px);
 }
 
+.spacer{
+    flex:1;
+}
+
+.quote{
+    font-size:1.3rem;
+    color:#8b949e;
+    font-style:italic;
+    margin-bottom:20px;
+}
+
 .footer{
-    margin-top:150px;
     color:#6e7681;
     font-size:0.9rem;
 }
@@ -104,10 +111,6 @@ h1{
     <h1>PraaV</h1>
 
     <div class="alias">aka hertz</div>
-
-    <div class="quote">
-        "Still I Will"
-    </div>
 
     <div class="bio">
         Gamer • DevOps
@@ -132,6 +135,12 @@ h1{
         <a href="https://www.youtube.com/@praav_v" target="_blank">YouTube</a>
         <a href="https://www.twitch.tv/praav_v" target="_blank">Twitch</a>
         <a href="https://kick.com/praav" target="_blank">Kick</a>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="quote">
+        "Still I Will"
     </div>
 
     <div class="footer">
