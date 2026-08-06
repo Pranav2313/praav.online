@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HERTZ </title>
+
+<link rel="icon" type="image/png" href="log.png">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.content-links{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+    
+body{
+    font-family:'Satoshi',sans-serif;
+    color:#fff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+
+    background:
+        radial-gradient(circle at 50% -10%, rgba(90,160,255,.35), transparent 35%),
+        radial-gradient(circle at 20% 25%, rgba(70,120,255,.12), transparent 40%),
+        radial-gradient(circle at 85% 70%, rgba(0,180,255,.10), transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(25,60,140,.20), transparent 55%),
+        linear-gradient(180deg,
+            #132a52 0%,
+            #0d1c36 30%,
+            #08111f 65%,
+            #04060c 100%);
+}
+
+/* subtle background glow */
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 50% -5%,
+            rgba(90,170,255,.22),
+            transparent 45%
+        );
+
+    filter:blur(70px);
+
+    z-index:-1;
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+inset:0;
+
+background-image:
+url("noise.png");
+
+opacity:.025;
+
+pointer-events:none;
+}
+    
+.container{
+
+    position:relative;
+
+    width:min(1500px, calc(100vw - 40px));
+    min-height:calc(100vh - 40px);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(18,30,52,.78),
+            rgba(10,18,33,.68)
+        );
+
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:28px;
+
+    padding:50px 90px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    text-align:center;
+
+    box-shadow:
+        0 40px 90px rgba(0,0,0,.55),
+        0 0 120px rgba(45,110,255,.10),
+        inset 0 1px rgba(255,255,255,.05);
+
+    animation:fade .8s ease;
+}
+
+/* Glass border highlight */
+.container::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    border-radius:28px;
+
+    padding:1px;
+
+    background:linear-gradient(
+        180deg,
+        rgba(120,190,255,.16),
+        rgba(255,255,255,.02)
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+            mask-composite:exclude;
+
+    pointer-events:none;
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(18px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+h1{
+
+font-family:'Outfit',sans-serif;
+font-weight:800;
+letter-spacing:8px;
+font-size:5rem;;
+ text-transform:uppercase;
+
+text-shadow:
+0 0 8px rgba(255,255,255,.18),
+0 0 24px rgba(255,255,255,.10);
+
+}
+
+.alias{
+
+    margin-top:10px;
+
+    color:#8b949e;
+
+    font-size:1rem;
+
+    letter-spacing:4px;
+
+
+}
+
+.bio{
+
+    margin-top:25px;
+
+    color:#c9d1d9;
+
+    font-size:1.05rem;
+
+}
+
+.status{
+
+    margin-top:18px;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#8b949e;
+
+    font-size:.95rem;
+
+}
+
+.status::before{
+
+    content:"";
+
+    width:8px;
+
+    height:8px;
+
+    background:#2ecc71;
+
+    border-radius:50%;
+
+    box-shadow:0 0 10px #2ecc71;
+
+}
+
+.section-title{
+
+    margin-top:30px;
+    margin-bottom:14px;
+
+    color:#8b949e;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:.82rem;
+
+}
+
+.links{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:16px;
+
+}
+
+.links a{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+width:125px;
+height:110px;
+    
+background:linear-gradient(
+180deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.02)
+);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.05);
+
+border-radius:18px;
+
+text-decoration:none;
+
+color:white;
+
+transition:
+transform .25s,
+background .25s,
+border-color .25s,
+box-shadow .25s;
+
+}
+
+.links span{
+
+font-size:.82rem;
+color:#c7d2e5;
+transition:color .25s;
+}
+
+.links a{
+    cursor:pointer;
+}
+    
+.links a:hover{
+
+transform:
+translateY(-6px)
+scale(1.03);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,.45),
+0 0 18px rgba(255,255,255,.06);
+
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.03)
+);
+}
+
+.links a:hover i{
+  transform:scale(1.12);
+  text-shadow:0 0 12px rgba(255,255,255,.45);
+}
+
+.links a:hover span{
+    color:#fff;
+}
+
+.links i{
+
+font-size:1.8rem;
+
+transition:
+transform .25s,
+color .25s;
+
+}
+    
+.divider{
+
+    width:90px;
+
+    height:1px;
+
+    background:#30363d;
+
+    margin:35px auto 25px;
+
+}
+
+.spacer{
+    flex:.4;
+}
+
+.quote{
+
+    color:#a7b0bd;
+
+    font-size:1.15rem;
+
+    font-style:italic;
+
+    opacity:.9;
+
+    margin-bottom:16px;
+
+}
+
+.footer{
+    color:#6e7681;
+    font-size:.82rem;
+    opacity:.8;
+    letter-spacing:1px;
+}
+
+
+@media (max-width:700px){
+
+    .content-links{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .content-links a{
+        width:145px;
+        max-width:145px;
+    }
+
+    /* Override the grid only for the Content section */
+    .links.content-links{
+        display:flex !important;
+        justify-content:center !important;
+        align-items:center;
+    }
+
+
+    
+body{
+    padding:14px;
+}
+
+.container{
+    width:100%;
+    min-height:auto;
+    padding:28px 22px;
+}
+
+h1{
+    font-size:3.3rem;
+    letter-spacing:5px;
+}
+
+.alias{
+    font-size:.95rem;
+}
+
+.bio{
+    margin-top:18px;
+}
+
+.section-title{
+    margin-top:24px;
+    margin-bottom:14px;
+}
+
+.links{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    justify-items:center;
+}
+
+.links a{
+    width:100%;
+    max-width:145px;
+    height:105px;
+}
+
+.links a:active{
+
+transform:scale(.96);
+}
+
+.quote{
+    font-size:1rem;
+}
+
+.footer{
+    font-size:.8rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>HertZ</h1>
+
+<div class="alias">
+aka PRAAV
+</div>
+
+<div class="bio">
+Gaming • DevOps
+</div>
+
+<div class="status">
+Online
+</div>
+
+<div class="section-title">
+Socials
+</div>
+
+<div class="links ">
+
+<a href="https://x.com/Hertz_z_">
+    <i class="fa-brands fa-x-twitter"></i>
+    <span>Twitter</span>
+</a>
+
+<a href="https://discord.com/users/724272668748283976">
+    <i class="fa-brands fa-discord"></i>
+    <span>Discord</span>
+</a>
+
+<a href="https://steamcommunity.com/id/praav_v">
+    <i class="fa-brands fa-steam"></i>
+    <span>Steam</span>
+</a>
+
+<a href="https://backloggd.com/u/Hertz_">
+    <i class="fa-solid fa-gamepad"></i>
+    <span>Backloggd</span>
+</a>
+
+</div>
+
+<div class="section-title">
+Content
+</div>
+
+<div class="links content-links">
+
+<a href="https://www.youtube.com/@Hertz_z">
+    <i class="fa-brands fa-youtube"></i>
+    <span>Youtube</span>
+</a>
+
+</div>
+
+<div class="spacer"></div>
+
+<div class="divider"></div>
+
+<div class="quote">
+"Still I Will."
+</div>
+
+<div class="footer">
+© 2014 HERTZ
+</div>
+
+</div>
+
+</body>
+</html>
