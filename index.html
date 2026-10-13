@@ -559,6 +559,76 @@ h1{
 
 }
 
+
+
+/* Wall of Games */
+.game-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 25px;
+    margin-top: 14px;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(134,183,255,.16);
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(100,155,255,.13),
+        rgba(255,255,255,.025)
+    );
+    transition: .25s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(134,183,255,.4);
+    box-shadow: 0 16px 40px rgba(0,0,0,.3);
+}
+
+.game-icon {
+    font-size: 2.4rem;
+    flex-shrink: 0;
+}
+
+.game-label {
+    color: #86b7ff;
+    font-size: .75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.game-card h3 {
+    margin-top: 6px;
+    font-size: 1.45rem;
+}
+
+.game-card p {
+    margin-top: 7px;
+    color: #aab8cc;
+    font-size: .92rem;
+    line-height: 1.6;
+}
+
+.game-arrow {
+    margin-left: auto;
+    color: #86b7ff;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .game-card {
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .game-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+    
 </style>
 </head>
 
@@ -580,6 +650,31 @@ Gaming • DevOps
 Online
 </div>
 
+
+<div class="section-title reveal">
+    Wall of Games
+</div>
+
+<a class="game-card"
+   href="https://backloggd.com/u/Hertz_/"
+   target="_blank"
+   rel="noopener noreferrer">
+
+    <div class="game-icon">🎮</div>
+
+    <div>
+        <div class="game-label">My gaming archive</div>
+        <h3>Wall of Games</h3>
+        <p>
+            Games I've played, finished, and want to experience.
+            Explore my gaming journey on Backloggd.
+        </p>
+    </div>
+
+    <div class="game-arrow">↗</div>
+</a>
+
+
 <div class="section-title reveal">
 Socials
 </div>
@@ -599,11 +694,6 @@ Socials
 <a href="https://steamcommunity.com/id/praav_v">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658a3.4 3.4 0 0 1 1.945-.594q.088 0 .175.006l2.86-4.142v-.058a4.657 4.657 0 0 1 4.652-4.652 4.657 4.657 0 0 1 4.652 4.653 4.657 4.657 0 0 1-4.652 4.652h-.107l-4.076 2.911q.002.083.002.166a3.44 3.44 0 0 1-3.437 3.437 3.44 3.44 0 0 1-3.412-2.988L1.06 15.674C2.638 20.436 7.113 24 12 24c6.627 0 12-5.373 12-12S18.606 0 11.979 0M7.54 18.21l-1.473-.609a2.6 2.6 0 0 0 1.34 1.28 2.593 2.593 0 0 0 3.399-1.395 2.57 2.57 0 0 0-.019-1.976 2.6 2.6 0 0 0-1.379-1.375 2.57 2.57 0 0 0-1.941-.05l1.523.63a1.907 1.907 0 1 1-1.45 3.495M17.94 8.61a3.1 3.1 0 0 0-3.101-3.099 3.104 3.104 0 0 0-.001 6.207 3.1 3.1 0 0 0 3.102-3.108m-5.427-.003a2.33 2.33 0 0 1 2.326-2.33 2.332 2.332 0 1 1-.001 4.66 2.33 2.33 0 0 1-2.325-2.33"/></svg>
     <span>Steam</span>
-</a>
-
-<a href="https://backloggd.com/u/Hertz_">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 6H3a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2M9 12H7v2H5v-2H3v-2h2V8h2v2h2zm5.5 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/></svg>
-    <span>Backloggd</span>
 </a>
 
 </div>
