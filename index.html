@@ -701,6 +701,70 @@ h1{
         margin: 0 auto 8px;
     }
 }
+
+/* Restore social and content cards */
+.links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    color: #f3f6ff;
+    text-decoration: none;
+
+    background: linear-gradient(
+        145deg,
+        rgba(43, 65, 100, 0.55),
+        rgba(13, 25, 44, 0.92)
+    );
+
+    border: 1px solid rgba(160, 195, 245, 0.16);
+    border-radius: 22px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.links a i,
+.links a svg {
+    color: #ffffff;
+    fill: currentColor;
+    width: 38px;
+    height: 38px;
+    font-size: 38px;
+}
+
+.links a span {
+    color: #c8d3e6;
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    .links:not(.content-links) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+        gap: 14px;
+    }
+
+    .links:not(.content-links) a {
+        width: 100%;
+        max-width: 155px;
+        min-height: 145px;
+        box-sizing: border-box;
+    }
+
+    .links:not(.content-links) a[href*="steamcommunity"] {
+        grid-column: 1 / -1;
+        width: 155px;
+        justify-self: center;
+    }
+
+    .content-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
     
 </style>
 </head>
