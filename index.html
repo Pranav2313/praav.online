@@ -341,17 +341,17 @@ gap:10px;
 width:125px;
 height:110px;
 
-background: linear-gradient(
-    145deg,
-    rgba(58, 86, 128, 0.28),
-    rgba(17, 29, 49, 0.82)
+background:linear-gradient(
+180deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.02)
 );
 
 backdrop-filter:blur(18px);
 
 -webkit-backdrop-filter:blur(18px);
 
-border: 1px solid rgba(155, 190, 235, 0.12);
+border:1px solid rgba(255,255,255,.05);
 
 border-radius:18px;
 
@@ -369,9 +369,7 @@ transition:
 transform .3s cubic-bezier(.16,1,.3,1),
 background .3s,
 border-color .3s,
-box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+box-shadow .3s;
 }
 
 /* stagger each tile slightly so the grid settles in one wave, not scattered pops */
@@ -400,13 +398,15 @@ box-shadow:
 0 20px 45px rgba(0,0,0,.45),
 0 0 22px rgba(90,160,255,.18);
 
-background: linear-gradient(
-    145deg,
-    rgba(70, 115, 175, 0.34),
-    rgba(20, 35, 59, 0.94)
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.03)
 );
 
-border-color: rgba(145, 190, 255, 0.35);
+border-color:rgba(120,180,255,.28);
+}
 
 .links a:focus-visible{
     outline:2px solid rgba(120,180,255,.6);
@@ -561,95 +561,66 @@ h1{
 
 
 /* Wall of Games */
-/* Wall of Games card */
 .game-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-
-    width: 420px;
+    gap: 20px;
+    width: 380px;
     max-width: 100%;
-    min-height: 112px;
-    padding: 26px;
+    box-sizing: border-box;
+    padding: 24px;
     margin: 0 auto;
-
-    color: #f4f8ff;
     text-decoration: none;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(70, 120, 190, 0.22),
-            rgba(22, 38, 64, 0.78) 55%,
-            rgba(40, 65, 100, 0.35)
-        );
-
-    border: 1px solid rgba(160, 195, 245, 0.20);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 22px;
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.09);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-}
-
-.game-card .game-icon {
-    display: block;
-    width: 30px;
-    height: 30px;
-    flex-shrink: 0;
-    color: #c5dcff;
-    transition: transform 0.25s ease;
-}
-
-.game-card .game-title {
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: -0.4px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: 0.25s ease;
 }
 
 .game-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(145, 190, 255, 0.48);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(75, 135, 220, 0.28),
-            rgba(25, 43, 72, 0.90) 55%,
-            rgba(50, 85, 135, 0.40)
-        );
-
-    box-shadow:
-        0 18px 38px rgba(0, 0, 0, 0.30),
-        0 0 24px rgba(75, 140, 255, 0.10),
-        inset 0 1px 0 rgba(255, 255, 255, 0.13);
+    transform: translateY(-3px);
+    border-color: rgba(150, 190, 255, 0.4);
+    background: rgba(255, 255, 255, 0.085);
 }
 
-.game-card:hover .game-icon {
-    transform: scale(1.1);
+.game-card .game-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+    display: block;
+    width: 34px;
+    height: 34px;
+    color: #fff;
+}
+    
+.game-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+.game-card .game-title {
+    font-size: 25px;
+    font-weight: 600;
 }
 
 @media (max-width: 700px) {
     .game-card {
-        width: min(420px, 100%);
-        min-height: 100px;
+        width: min(380px, 100%);
         padding: 22px 18px;
-        gap: 13px;
     }
+}
 
-    .game-card .game-title {
-        font-size: 23px;
-    }
+    
+.game-label {
+    color: #8b949e;
+    font-size: .7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 
@@ -701,70 +672,6 @@ h1{
         margin: 0 auto 8px;
     }
 }
-
-/* Restore social and content cards */
-.links a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-
-    color: #f3f6ff;
-    text-decoration: none;
-
-    background: linear-gradient(
-        145deg,
-        rgba(43, 65, 100, 0.55),
-        rgba(13, 25, 44, 0.92)
-    );
-
-    border: 1px solid rgba(160, 195, 245, 0.16);
-    border-radius: 22px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.links a i,
-.links a svg {
-    color: #ffffff;
-    fill: currentColor;
-    width: 38px;
-    height: 38px;
-    font-size: 38px;
-}
-
-.links a span {
-    color: #c8d3e6;
-    text-decoration: none;
-}
-
-@media (max-width: 700px) {
-    .links:not(.content-links) {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        justify-items: center;
-        gap: 14px;
-    }
-
-    .links:not(.content-links) a {
-        width: 100%;
-        max-width: 155px;
-        min-height: 145px;
-        box-sizing: border-box;
-    }
-
-    .links:not(.content-links) a[href*="steamcommunity"] {
-        grid-column: 1 / -1;
-        width: 155px;
-        justify-self: center;
-    }
-
-    .content-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
     
 </style>
 </head>
@@ -798,13 +705,16 @@ Online
    rel="noopener noreferrer">
 
     <svg class="game-icon" viewBox="0 0 24 24"
-         xmlns="http://www.w3.org/2000/svg"
-         aria-hidden="true">
-        <path fill="currentColor"
-              d="M7 6h10a5 5 0 0 1 4.8 6.4l-1 3.5a2.5 2.5 0 0 1-4.2 1.1L14.5 15h-5l-2.1 2a2.5 2.5 0 0 1-4.2-1.1l-1-3.5A5 5 0 0 1 7 6Zm0 2a3 3 0 0 0-2.9 3.8l1 3.5a.5.5 0 0 0 .8.2L8.6 13h6.8l2.7 2.5a.5.5 0 0 0 .8-.2l1-3.5A3 3 0 0 0 17 8H7Zm1 1v2H6v2h2v2h2v-2h2v-2h-2V9H8Zm7.5 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm2 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/>
-    </svg>
+     xmlns="http://www.w3.org/2000/svg"
+     aria-hidden="true">
+    <path fill="currentColor"
+          d="M7 6h10a5 5 0 0 1 4.8 6.4l-1 3.5a2.5 2.5 0 0 1-4.2 1.1L14.5 15h-5l-2.1 2a2.5 2.5 0 0 1-4.2-1.1l-1-3.5A5 5 0 0 1 7 6Zm0 2a3 3 0 0 0-2.9 3.8l1 3.5a.5.5 0 0 0 .8.2L8.6 13h6.8l2.7 2.5a.5.5 0 0 0 .8-.2l1-3.5A3 3 0 0 0 17 8H7Zm1 1v2H6v2h2v2h2v-2h2v-2h-2V9H8Zm7.5 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm2 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/>
+     </svg>
 
-    <span class="game-title">Backloggd</span>
+    <div class="game-card-text">
+        <span class="game-title">Backloggd</span>
+    </div>
+
 </a>
 
 
