@@ -564,70 +564,55 @@ h1{
 .game-card {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 22px;
-    width: 360px;
+    justify-content: center;
+    gap: 20px;
+    width: 380px;
     max-width: 100%;
-    padding: 20px 24px;
-    margin: 0 auto;
     box-sizing: border-box;
-
+    padding: 24px;
+    margin: 0 auto;
     text-decoration: none;
     color: #fff;
     background: rgba(255, 255, 255, 0.055);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
+    border-radius: 22px;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
-    transition: transform 0.25s ease,
-                border-color 0.25s ease,
-                background 0.25s ease,
-                box-shadow 0.25s ease;
+    transition: 0.25s ease;
 }
 
 .game-card:hover {
-    transform: translateY(-4px);
-    background: rgba(255, 255, 255, 0.09);
-    border-color: rgba(120, 170, 255, 0.45);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+    transform: translateY(-3px);
+    border-color: rgba(150, 190, 255, 0.4);
+    background: rgba(255, 255, 255, 0.085);
 }
 
 .game-card .game-icon {
-    font-size: 27px;
-    color: #9fc5ff;
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.game-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .game-card .game-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 12px;
-    color: #aab8ce;
+    font-size: 14px;
     letter-spacing: 1.5px;
-    text-transform: uppercase;
+    color: #aab8ce;
 }
 
 .game-card .game-title {
-    font-size: 19px;
+    font-size: 25px;
     font-weight: 600;
-    letter-spacing: 0.2px;
-}
-
-.game-card .game-arrow {
-    font-size: 18px;
-    color: #aab8ce;
-    transition: transform 0.25s ease;
-}
-
-.game-card:hover .game-arrow {
-    transform: translate(3px, -3px);
 }
 
 @media (max-width: 700px) {
     .game-card {
-        width: min(360px, 100%);
-        padding: 18px 20px;
+        width: min(380px, 100%);
+        padding: 22px 18px;
     }
 }
 
@@ -723,21 +708,18 @@ Online
     Wall of Games
 </div>
 
-<a class="game-card"
-   href="https://backloggd.com/u/Hertz_/"
+<a href="https://backloggd.com/u/Hertz_/"
+   class="game-card"
    target="_blank"
    rel="noopener noreferrer">
-   <i class="fa-solid fa-gamepad game-icon"></i>
-    <div class="game-icon">
-        <i class="fa-solid fa-gamepad"></i>
+
+    <i class="fa-solid fa-gamepad game-icon"></i>
+
+    <div class="game-card-text">
+        <span class="game-label">WALL OF GAMES</span>
+        <span class="game-title">Backloggd</span>
     </div>
 
-    <div>
-        <div class="game-label">Wall of Games</div>
-        <h3>Backloggd</h3>
-    </div>
-
-    
 </a>
 
 
