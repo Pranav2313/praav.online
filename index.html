@@ -560,73 +560,118 @@ h1{
 }
 
 
-
 /* Wall of Games */
 .game-card {
     display: flex;
     align-items: center;
-    gap: 22px;
-    padding: 25px;
-    margin-top: 14px;
+    justify-content: center;
+    gap: 18px;
+
+    width: fit-content;
+    min-width: 290px;
+    max-width: 100%;
+
+    margin: 14px auto 0;
+    padding: 22px 32px;
+
     text-align: left;
     text-decoration: none;
-    color: white;
-    border: 1px solid rgba(134,183,255,.16);
-    border-radius: 20px;
+    color: #fff;
+
     background: linear-gradient(
         135deg,
-        rgba(100,155,255,.13),
+        rgba(100,155,255,.12),
         rgba(255,255,255,.025)
     );
-    transition: .25s ease;
+
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 20px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition: transform .25s ease,
+                border-color .25s ease,
+                box-shadow .25s ease,
+                background .25s ease;
 }
 
 .game-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(134,183,255,.4);
-    box-shadow: 0 16px 40px rgba(0,0,0,.3);
+    border-color: rgba(255,255,255,.3);
+    background: rgba(255,255,255,.07);
+    box-shadow: 0 14px 35px rgba(0,0,0,.25);
 }
 
 .game-icon {
-    font-size: 2.4rem;
+    font-size: 2rem;
     flex-shrink: 0;
 }
 
 .game-label {
-    color: #86b7ff;
-    font-size: .75rem;
+    color: #8b949e;
+    font-size: .7rem;
     letter-spacing: 3px;
     text-transform: uppercase;
 }
 
 .game-card h3 {
-    margin-top: 6px;
-    font-size: 1.45rem;
-}
-
-.game-card p {
-    margin-top: 7px;
-    color: #aab8cc;
-    font-size: .92rem;
-    line-height: 1.6;
+    margin-top: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 
 .game-arrow {
-    margin-left: auto;
-    color: #86b7ff;
-    font-size: 1.5rem;
+    margin-left: 8px;
+    color: #b8c7df;
+    font-size: 1.2rem;
+    transition: transform .25s ease;
 }
 
-@media (max-width: 600px) {
+.game-card:hover .game-arrow {
+    transform: translate(3px, -3px);
+    color: #fff;
+}
+
+@media (max-width: 700px) {
     .game-card {
+        min-width: 0;
+        width: min(290px, 100%);
+        padding: 18px 22px;
         gap: 14px;
-        padding: 18px;
     }
 
     .game-card h3 {
         font-size: 1.2rem;
     }
 }
+
+
+@media (max-width: 700px) {
+    .links:not(.content-links) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+    }
+
+    .links:not(.content-links) a {
+        width: 100%;
+        max-width: 145px;
+        justify-self: center;
+    }
+
+    .links:not(.content-links) a i {
+        display: block;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .content-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
 
     
 </style>
@@ -650,8 +695,8 @@ Gaming • DevOps
 Online
 </div>
 
-
-<div class="section-title reveal">
+    
+<div class="section-title">
     Wall of Games
 </div>
 
@@ -660,15 +705,13 @@ Online
    target="_blank"
    rel="noopener noreferrer">
 
-    <div class="game-icon">🎮</div>
+    <div class="game-icon">
+        <i class="fa-solid fa-gamepad"></i>
+    </div>
 
     <div>
-        <div class="game-label">My gaming archive</div>
+        <div class="game-label">My Archive</div>
         <h3>Wall of Games</h3>
-        <p>
-            Games I've played, finished, and want to experience.
-            Explore my gaming journey on Backloggd.
-        </p>
     </div>
 
     <div class="game-arrow">↗</div>
