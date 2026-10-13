@@ -688,6 +688,14 @@ h1{
     }
 }
 
+@media (max-width: 700px) {
+    .links:not(.content-links) a[href*="steamcommunity"] {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 100%;
+        max-width: 268px;
+    }
+}
     
 </style>
 </head>
@@ -719,17 +727,17 @@ Online
    href="https://backloggd.com/u/Hertz_/"
    target="_blank"
    rel="noopener noreferrer">
-
+   <i class="fa-solid fa-gamepad game-icon"></i>
     <div class="game-icon">
         <i class="fa-solid fa-gamepad"></i>
     </div>
 
     <div>
-        <div class="game-label">My Archive</div>
-        <h3>Wall of Games</h3>
+        <div class="game-label">Wall of Games</div>
+        <h3>Backloggd</h3>
     </div>
 
-    <div class="game-arrow">↗</div>
+    
 </a>
 
 
