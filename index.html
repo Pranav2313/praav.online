@@ -590,19 +590,18 @@ h1{
 .game-card .game-icon {
     font-size: 32px;
     flex-shrink: 0;
+    display: block;
+    width: 34px;
+    height: 34px;
+    color: #fff;
 }
-
+    
 .game-card-text {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.game-card .game-label {
-    font-size: 14px;
-    letter-spacing: 1.5px;
-    color: #aab8ce;
-}
 
 .game-card .game-title {
     font-size: 25px;
@@ -616,11 +615,7 @@ h1{
     }
 }
 
-.game-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-}
-
+    
 .game-label {
     color: #8b949e;
     font-size: .7rem;
@@ -628,18 +623,6 @@ h1{
     text-transform: uppercase;
 }
 
-.game-card h3 {
-    margin-top: 5px;
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-.game-arrow {
-    margin-left: 8px;
-    color: #b8c7df;
-    font-size: 1.2rem;
-    transition: transform .25s ease;
-}
 
 @media (max-width: 700px) {
     .links:not(.content-links) {
@@ -721,7 +704,12 @@ Online
    target="_blank"
    rel="noopener noreferrer">
 
-    <i class="fa-solid fa-gamepad game-icon"></i>
+    <svg class="game-icon" viewBox="0 0 24 24"
+     xmlns="http://www.w3.org/2000/svg"
+     aria-hidden="true">
+    <path fill="currentColor"
+          d="M7 6h10a5 5 0 0 1 4.8 6.4l-1 3.5a2.5 2.5 0 0 1-4.2 1.1L14.5 15h-5l-2.1 2a2.5 2.5 0 0 1-4.2-1.1l-1-3.5A5 5 0 0 1 7 6Zm0 2a3 3 0 0 0-2.9 3.8l1 3.5a.5.5 0 0 0 .8.2L8.6 13h6.8l2.7 2.5a.5.5 0 0 0 .8-.2l1-3.5A3 3 0 0 0 17 8H7Zm1 1v2H6v2h2v2h2v-2h2v-2h-2V9H8Zm7.5 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm2 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/>
+     </svg>
 
     <div class="game-card-text">
         <span class="game-label">WALL OF GAMES</span>
