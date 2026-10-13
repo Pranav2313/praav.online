@@ -675,10 +675,18 @@ h1{
 
 @media (max-width: 700px) {
     .links:not(.content-links) a[href*="steamcommunity"] {
-        grid-column: 1 / -1;
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        max-width: 145px !important;
         justify-self: center;
+        box-sizing: border-box;
+    }
+
+    .links:not(.content-links) a[href*="steamcommunity"] i {
+        display: block;
         width: 100%;
-        max-width: 268px;
+        text-align: center;
+        margin: 0 auto 8px;
     }
 }
     
